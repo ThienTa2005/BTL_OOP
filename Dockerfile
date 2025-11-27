@@ -1,10 +1,8 @@
 FROM tomcat:9.0-jdk17-temurin
 
-# Xóa ROOT mặc định
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
-
-# Copy đúng thư mục web (đây là webapp thực sự của bạn)
-COPY ./web /usr/local/tomcat/webapps/ROOT/
+# Copy file WAR NetBeans build sang Tomcat, đổi tên thành ROOT.war
+# để ứng dụng chạy ở context "/" (giống localhost của bạn)
+COPY ./dist/du_an1.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
