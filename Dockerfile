@@ -1,13 +1,11 @@
 FROM tomcat:9.0-jdk17-temurin
 
-# Xóa ROOT mặc định của Tomcat (chứa sample)
+# Xóa ROOT mặc định
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Copy toàn bộ dự án của bạn vào thư mục ROOT mới
+# Copy toàn bộ project vào ROOT
 COPY ./ /usr/local/tomcat/webapps/ROOT/
 
-# Expose cổng Tomcat
+# Tomcat chạy
 EXPOSE 8080
-
-# Run Tomcat
 CMD ["catalina.sh", "run"]
