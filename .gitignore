@@ -12,7 +12,6 @@
 
 # Package Files #
 *.jar
-*.war
 *.nar
 *.ear
 *.zip
@@ -24,4 +23,3 @@ hs_err_pid*
 replay_pid*
 /nbproject/private/
 /build/
-/dist/
